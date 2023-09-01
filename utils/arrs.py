@@ -1,5 +1,4 @@
-"""Функции для работы с массивами"""
-
+# utils/arrs.py
 
 def get(array, index, default=None):
     """
@@ -14,7 +13,10 @@ def get(array, index, default=None):
     if index < 0:
         return default
 
-    return array[index]
+    try:
+        return array[index]
+    except IndexError:
+        return default
 
 
 def my_slice(coll, start=0, end=None):
